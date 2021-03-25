@@ -44,18 +44,21 @@ Here's a walkthrough of implemented user stories:
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
-https://developers.google.com/web/updates/2017/09/autoplay-policy-changes#webaudio
-https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API
-Read these two pages to figure out why sound was only playing in Glitch but not in Chrome or Firefox.
+    https://developers.google.com/web/updates/2017/09/autoplay-policy-changes#webaudio
+    https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API
+    -Read these two pages to figure out why sound was only playing in Glitch but not in Chrome or Firefox.
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words)
+
 The first major bug or issue I came across was when I started to record my project in a browser, the audio clues would no longer work. When checking back on Glitch, it was working fine which made it very confusing. After searching on the internet for a while, I came across many StackOverflow questions that were similar but none of them did anything. I then decided to google more specifically about Google Chrome and found an Google developer page relating to AudioContext() that was used in this project. I also found a Firefox dev page that was quite similar. It appears to have something to do with creating the AudioContext before the site has processed any user gesture. This results in a suspended state and the AudioContext will stop. To fix this, I added a check to see if user interacts, and if so, the AudioContext will resume from suspended state. After testing out the Google Chrome fix, it appears to work perfectly now. 
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
+
+After completing my submission, the first question that comes to mind is which tools are necessary to creating a fully fledged web application? From working with this project, I noticed that there were many different things a developer would have to juggle. There is a combination of HTML, CSS, and Javascript, as well as backend work if you didn't use Glitch. I have also heard about using React, and am wondering how do you decide what is suited for your specific needs. I am also not too familiar with backend, so another question I would have is how would you connect your app to the backend? I assume that Glitch takes care of it as it is a hosting service as well, but if you were to create an app on your own, how much work goes into the backend when compared to frontend?
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
+
+
 
 
 
