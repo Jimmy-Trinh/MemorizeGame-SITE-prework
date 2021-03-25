@@ -34,7 +34,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] Add mistake counter to let user know
+- [x] Add mistake counter alert to let user know how many wrong guesses they still have before losing.
 
 ## Video Walkthrough
 
