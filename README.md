@@ -22,9 +22,9 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 
-* [ ] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
-* [ ] Buttons use a pitch (frequency) other than the ones in the tutorial
-* [ ] More than 4 functional game buttons
+* [x] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
+* [x] Buttons use a pitch (frequency) other than the ones in the tutorial
+* [x] More than 4 functional game buttons
 * [ ] Playback speeds up on each turn
 * [ ] Computer picks a different pattern each time the game is played
 * [ ] Player only loses after 3 mistakes (instead of on the first mistake)
@@ -50,6 +50,10 @@ https://developers.google.com/web/updates/2017/09/autoplay-policy-changes#webaud
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API
 
 -Read these two pages to figure out why sound was only playing in Glitch but not in Chrome or Firefox.
+
+https://www.w3schools.com/
+
+-Read on general syntax for html, css, and javascript since I am beginner.
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words)
 
