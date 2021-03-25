@@ -46,7 +46,9 @@ Here's a walkthrough of implemented user stories:
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
 
 https://developers.google.com/web/updates/2017/09/autoplay-policy-changes#webaudio
+
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API
+
 -Read these two pages to figure out why sound was only playing in Glitch but not in Chrome or Firefox.
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words)
