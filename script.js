@@ -1,21 +1,33 @@
 // global constants
-const clueHoldTime = 1000; //how long to hold each clue's light/sound
 const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
 
 //Global Variables
-var pattern = [1, 2, 4, 3, 4, 1, 2, 4];
+// var pattern = [1, 2, 4, 3, 4, 2, 5, 6];
+var pattern = []
+var patternSize = 8 
 var progress = 0; 
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.4;  //must be between 0.0 and 1.0
 var guessCounter = 0;
+var clueHoldTime = 1000; //how long to hold each clue's light/sound (changed to var to speed up)
+var mistakes = 0;
 
+const mistakesText = document.getElementById('mistakesText');
+
+function rngPattern(patternSize){
+  for (var i = 0; i <= patternSize; i++) {
+    pattern[i] = Math.floor(Math.random() * (6 - 1 + 1) + 1); // inclusive range of 1-6 (for # of btns)
+  }
+}
 
 function startGame(){
   //initialize game variables
   progress = 0;
   gamePlaying = true;
+  rngPattern(patternSize)
+  mistakes = 0;
   
   // swap the Start and Stop buttons
   document.getElementById("startBtn").classList.add("hidden");
@@ -53,17 +65,19 @@ function playSingleClue(btn){
 function playClueSequence(){
   guessCounter = 0;
   let delay = nextClueWaitTime; //set delay to initial wait time
+  clueHoldTime -= 50; // each time clue is played, the Hold time is reduced to speed up clue
   
   for(let i=0;i<=progress;i++){ // for each clue that is revealed so far
     console.log("play single clue: " + pattern[i] + " in " + delay + "ms")
     setTimeout(playSingleClue,delay,pattern[i]) // set a timeout to play that clue
-    delay += clueHoldTime 
+    delay += clueHoldTime;
     delay += cluePauseTime;
   }
 }
 
 // win and lose
 function loseGame(){
+  mistakesText.textContent = "Mistakes remaining: 0";
   stopGame();
   alert("Game Over. You lost.");
 }
@@ -100,17 +114,29 @@ function guess(btn){
       guessCounter++;
     }
   } else {
-    // No, incorrect guess. Lose game
-    loseGame();
+    // No, incorrect guess. Lose game if 3 mistakes are up.
+    // use 2 b/c inclusive
+    if (mistakes == 2) {
+      loseGame();
+    } else {
+      mistakes++;
+      // alerts user and updates text display on web page to show mistakes
+      alert(`You guessed wrong!\n${3-mistakes} mistake(s) remaining.`);
+      mistakesText.textContent = "Mistakes remaining: " + (3-mistakes);
+      
+      playClueSequence();
+    }
   }
 }
 
 // Sound Synthesis Functions
 const freqMap = {
-  1: 261.6,
-  2: 329.6,
-  3: 392,
-  4: 466.2
+  1: 200,
+  2: 250,
+  3: 300,
+  4: 350,
+  5: 400,
+  6: 450
 }
 function playTone(btn,len){ 
   o.frequency.value = freqMap[btn]
@@ -141,3 +167,11 @@ g.connect(context.destination)
 g.gain.setValueAtTime(0,context.currentTime)
 o.connect(g)
 o.start(0)
+
+// audio did not play in Chrome
+// this makes it so that it checks if user interacts with page to 
+document.querySelector('button').addEventListener('click', function() {
+  context.resume().then(() => {
+    console.log('Playback resumed successfully');
+  });
+});
