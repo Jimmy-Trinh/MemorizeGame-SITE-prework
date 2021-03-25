@@ -40,7 +40,7 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-![GIF](https://i.imgur.com/OKxSb43.gif)
+![GIF](https://i.imgur.com/WnQ7mN1.gif)
 
 
 ## Reflection Questions
@@ -71,7 +71,7 @@ After completing my submission, the first question that comes to mind is which t
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
 
-
+If I had a few more hours to work on this project, I would love to update the UI with images and a better layout. For example, I would want the page to start off with an intro, and clicking "Start" would then take you to the actual game page, rather than everything being on one page. I think UI design can be super fun, and I've had experience with editing UI of Android apps. However, this isn't quite the same, so I would need to learn and that would take some time. I also really wanted to figure out how to get animations to work. If I could, one thing I would definitely add is confetti when the user beats the game. If I had more time, I would also like to implement an animated timer, or just a clock to give pressure to the user. It would make the game more challenging and fun. 
 
 
 
