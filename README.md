@@ -4,7 +4,7 @@
 
 Submitted by: **Jimmy Trinh**
 
-Time spent: **3.5** hours spent in total
+Time spent: **4** hours spent in total
 
 Link to project: (https://memorize-game.glitch.me)
 
@@ -35,6 +35,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [x] Add mistake counter alert to let user know how many wrong guesses they still have before losing.
+- [x] Add on screen display of the # of mistakes left under the game buttons. Make it red. 
 
 ## Video Walkthrough
 
@@ -61,6 +62,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words)
 
 The first major bug or issue I came across was when I started to record my project in a browser, the audio clues would no longer work. When checking back on Glitch, it was working fine which made it very confusing. After searching on the internet for a while, I came across many StackOverflow questions that were similar but none of them did anything. I then decided to google more specifically about Google Chrome and found an Google developer page relating to AudioContext() that was used in this project. I also found a Firefox dev page that was quite similar. It appears to have something to do with creating the AudioContext before the site has processed any user gesture. This results in a suspended state and the AudioContext will stop. To fix this, I added a check to see if user interacts, and if so, the AudioContext will resume from suspended state. After testing out the Google Chrome fix, it appears to work perfectly now. 
+
+Another major challenge I had was trying to speed through learning the basics of HTML, CSS, and Javascript. Even though following along Codepath's tutorial helped a lot, when trying to create my additional mistakes counter, I had to do a lot of Googling and reading on w3schools.com to figure out syntax. I wanted to have the text display based on a variable within my script.js. Eventually, I figured it out, just required some time to read and understand the syntax.
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
 
