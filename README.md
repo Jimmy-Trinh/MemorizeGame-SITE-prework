@@ -48,7 +48,7 @@ https://developers.google.com/web/updates/2017/09/autoplay-policy-changes#webaud
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API
 Read these two pages to figure out why sound was only playing in Glitch but not in Chrome or Firefox.
 
-2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
+2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words)
 The first major bug or issue I came across was when I started to record my project in a browser, the audio clues would no longer work. When checking back on Glitch, it was working fine which made it very confusing. After searching on the internet for a while, I came across many StackOverflow questions that were similar but none of them did anything. I then decided to google more specifically about Google Chrome and found an Google developer page relating to AudioContext() that was used in this project. I also found a Firefox dev page that was quite similar. It appears to have something to do with creating the AudioContext before the site has processed any user gesture. This results in a suspended state and the AudioContext will stop. To fix this, I added a check to see if user interacts, and if so, the AudioContext will resume from suspended state. After testing out the Google Chrome fix, it appears to work perfectly now. 
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
