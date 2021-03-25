@@ -28,19 +28,19 @@ button {
 }
 
 #button1 {
-    background: lightgreen;
-}
-
-#button1:active, #button1.lit {
-    background:green;
-}
-
-#button2 {
     background: lightblue;
 }
 
-#button2:active, #button2.lit {
+#button1:active, #button1.lit {
     background:blue;
+}
+
+#button2 {
+    background: lightgreen;
+}
+
+#button2:active, #button2.lit {
+    background:green;
 }
 
 #button3 {
@@ -52,9 +52,33 @@ button {
 }
 
 #button4 {
-    background: lightyellow;
+    background: mediumpurple;
 }
 
 #button4:active, #button4.lit {
+    background:blueviolet;
+}
+
+#button5 {
+    background: lightseagreen;
+}
+
+#button5:active, #button5.lit {
+    background:aqua;
+}
+
+#button6 {
+    background: lightyellow;
+}
+
+#button6:active, #button6.lit {
     background:yellow;
+}
+
+#mistakesText {
+  padding-top:20px;
+  color: red;
+  font-family: verdana, arial, sans-serif; 
+  font-weight: bold;
+  font-size: 25px;
 }
